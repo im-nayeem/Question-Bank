@@ -1,8 +1,6 @@
 
 Repository Structure
 
-* [.github](https://github.com/im-nayeem/Question-Bank/tree/main//.github)
-	* [workflows](https://github.com/im-nayeem/Question-Bank/tree/main//.github/workflows)
 * [Assets](https://github.com/im-nayeem/Question-Bank/tree/main//Assets)
 	* [Accounting](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Accounting)
 		* [2014-2015](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Accounting/2014-2015)
