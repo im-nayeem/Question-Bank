@@ -8,14 +8,12 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-
     - name: Get links for folders
       run: |
-        git ls-tree --name-only -r --full-tree HEAD | grep 'Assets' > links.txt
+        find . -type d -path "*/Assets/*" -print > links.txt
         echo -n "" > README.md
         echo "Assets" >> README.md
         while read -r line; do
-          link="https://github.com/$GITHUB_REPOSITORY/tree/main/$line"
           # Get indentation level
           level=$(echo $line | awk -F'/' '{print NF-2}')
           # Add indentation
@@ -23,10 +21,9 @@ jobs:
           for ((i=0; i<$level; i++)); do
             indent="$indent  "
           done
-          # Add line to README
-          echo "$indent|-- [$(basename $line)]($link)" >> README.md
+          #Add line to README
+          echo "$indent|-- $(basename $line)" >> README.md
         done < links.txt
-
     - name: Commit and push changes
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
