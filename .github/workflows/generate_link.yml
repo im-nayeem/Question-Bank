@@ -4,29 +4,29 @@ on: [push]
 jobs:
   generate_links:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Get links for folders
       run: |
-        git ls-tree --name-only -r --full-tree HEAD | grep -v '.git' > links.txt
         echo -n "" > README.md
         echo "Repository Structure" >> README.md
-        while read -r line; do
-          if [ -d "$line" ]
-          then
-            # Get indentation level
-            level=$(echo $line | awk -F'/' '{print NF-1}')
-            # Add indentation
-            indent=""
-            for ((i=0; i<$level; i++)); do
-              indent="$indent  "
-            done
-            # Add line to README
-            echo "$indent|-- [$(basename $line)](https://github.com/$GITHUB_REPOSITORY/tree/main/$line)" >> README.md
-          fi
-        done < links.txt
+        const fs = require('fs');
+        const path = require('path');
+        let root = './Assets';
+        let result = '';
+        function walk(dir, level) {
+            let files = fs.readdirSync(dir);
+            files.forEach(file => {
+                let stats = fs.statSync(path.join(dir, file));
+                if (stats.isDirectory()) {
+                    result += `${"  ".repeat(level)}|-- [${file}](https://github.com/$GITHUB_REPOSITORY/tree/main/${path.join(dir, file)})`;
+                    walk(path.join(dir, file), level + 1);
+                }
+            });
+        }
+        walk(root, 1);
+        fs.appendFileSync('README.md', result);
     - name: Commit and push changes
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -34,3 +34,4 @@ jobs:
         git add README.md
         git commit -m "Update README with links for folders"
         git push
+        
