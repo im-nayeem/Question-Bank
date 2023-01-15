@@ -15,18 +15,18 @@ jobs:
         echo -n "" > README.md
         echo "Repository Structure" >> README.md
         function build_tree {
-                    local path=$1
-                    local indent=$2
-                    local contents=$(curl -s -H "Authorization: token $TOKEN" "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/contents/$path")
-                    local folders=$(echo $contents | jq -r '.[] | select(.type == "dir")')
-                    for folder in $(echo "${folders}" | jq -r '.name'); do
-                        local folder_path=$path/$folder
-                        echo "${indent}|-- [${folder}](https://github.com/$REPO_OWNER/$REPO_NAME/tree/main/${folder_path})" >> README.md
-                        build_tree $folder_path "${indent}|   "
-                    done
-              }
-build_tree "" ""
-
+            local path=$1
+            local indent=$2
+            local contents=$(curl -s -H "Authorization: token $TOKEN" "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/contents/$path")
+            local folders=$(echo $contents | jq -r '.[] | select(.type == "dir")')
+            for folder in $(echo "${folders}" | jq -r '.name'); do
+                local folder_path=$path/$folder
+                echo -e "\n${indent}|-- [${folder}](https://github.com/$REPO_OWNER/$REPO_NAME/tree/main/${folder_path})" >> README.md
+                build_tree $folder_path "${indent}|   "
+            done
+            echo -e "\n" >> README.md
+        }
+        build_tree "" ""
     - name: Commit and push changes
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
