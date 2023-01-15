@@ -27,11 +27,11 @@ jobs:
                     echo "" >> README.md
                 fi
                 last_folder=$folder
-                build_tree $folder_path "${indent}   "
+                build_tree $folder_path "${indent}\t"
+                echo "" >> README.md
             done
         }
         echo -e "" >> README.md
-        echo "Repository Structure" >> README.md
         build_tree "" ""
     - name: Commit and push changes
       run: |
