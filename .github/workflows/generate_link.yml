@@ -10,24 +10,23 @@ jobs:
       uses: actions/checkout@v2
     - name: Get links for folders
       run: |
-        find . -type d -path "*/Assets/*" -print > links.txt
+        git ls-tree --name-only -r --full-tree HEAD | grep -v '.git' > links.txt
         echo -n "" > README.md
-        echo "Assets" >> README.md
+        echo "Repository Structure" >> README.md
         while read -r line; do
-          # Get indentation level
-          level=$(echo $line | awk -F'/' '{print NF-2}')
-          # Add indentation
-          indent=""
-          for ((i=0; i<$level; i++)); do
-            indent="$indent  "
-          done
-          #Add line to README
-          echo "$indent|-- $(basename $line)" >> README.md
+          if [ -d "$line" ]
+          then
+            # Get indentation level
+            level=$(echo $line | awk -F'/' '{print NF-1}')
+            # Add indentation
+            indent=""
+            for ((i=0; i<$level; i++)); do
+              indent="$indent  "
+            done
+            # Add line to README
+            echo "$indent|-- [$(basename $line)](https://github.com/$GITHUB_REPOSITORY/tree/main/$line)" >> README.md
+          fi
         done < links.txt
     - name: Commit and push changes
       run: |
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "GitHub Actions"
-        git add README.md
-        git commit -m "Update README with links for folders"
-        git push
+        git config --local user.email "github-actions[
