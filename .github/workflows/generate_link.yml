@@ -22,8 +22,7 @@ jobs:
             local last_folder=""
             for folder in $(echo "${folders}" | jq -r '.name'); do
                 local folder_path=$path/$folder
-                if [ "$folder" != ".github" ]; then
-                    echo -e "${indent}* [${folder}](https://github.com/$REPO_OWNER/$REPO_NAME/tree/main/${folder_path})" >> README.md
+                echo -e "${indent}* [${folder}](https://github.com/$REPO_OWNER/$REPO_NAME/tree/main/${folder_path})" >> README.md
                 if [ "$last_folder" != "" ]; then
                     echo -e "\n" >> README.md
                 fi
