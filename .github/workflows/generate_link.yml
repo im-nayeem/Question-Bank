@@ -9,29 +9,26 @@ jobs:
       uses: actions/checkout@v2
     - name: Get links for folders
       run: |
+        TOKEN=${{ secrets.GITHUB_TOKEN }}
+        REPO_OWNER=$(echo $GITHUB_REPOSITORY | cut -d '/' -f 1)
+        REPO_NAME=$(echo $GITHUB_REPOSITORY | cut -d '/' -f 2)
         echo -n "" > README.md
         echo "Repository Structure" >> README.md
-        const fs = require('fs');
-        const path = require('path');
-        let root = './Assets';
-        let result = '';
-        function walk(dir, level) {
-            let files = fs.readdirSync(dir);
-            files.forEach(file => {
-                let stats = fs.statSync(path.join(dir, file));
-                if (stats.isDirectory()) {
-                    result += `${"  ".repeat(level)}|-- [${file}](https://github.com/$GITHUB_REPOSITORY/tree/main/${path.join(dir, file)})`;
-                    walk(path.join(dir, file), level + 1);
-                }
-            });
+        function build_tree {
+            local path=$1
+            local indent=$2
+            local contents=$(curl -s -H "Authorization: token $TOKEN" "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/contents/$path")
+            local folders=$(echo $contents | jq -r '.[] | select(.type == "dir")')
+            for folder in $(echo "${folders}" | jq -r '.name'); do
+                local folder_path=$path/$folder
+                echo "${indent}|-- [${folder}](https://github.com/$REPO_OWNER/$REPO_NAME/tree/main/${folder_path})" >> README.md
+                build_tree $folder_path "${indent}  "
+            done
         }
-        walk(root, 1);
-        fs.appendFileSync('README.md', result);
+        build_tree "" ""
     - name: Commit and push changes
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "GitHub Actions"
         git add README.md
-        git commit -m "Update README with links for folders"
-        git push
-        
+        git commit -
