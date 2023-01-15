@@ -25,7 +25,6 @@ jobs:
                 echo -e "${indent}* [${folder}](https://github.com/$REPO_OWNER/$REPO_NAME/tree/main/${folder_path})" >> README.md
                 last_folder=$folder
                 build_tree $folder_path "${indent}\t"
-                echo -e "" >> README.md
             done
         }
         echo -e "" >> README.md
