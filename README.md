@@ -8,7 +8,6 @@ Repository Structure
 
 * [Assets](https://github.com/im-nayeem/Question-Bank/tree/main//Assets)
 
-
 	* [Accounting](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Accounting)
 		* [2014-2015](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Accounting/2014-2015)
 
@@ -19,9 +18,7 @@ Repository Structure
 
 
 
-
 	* [Algorithm_Analysis_and_Design](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Algorithm_Analysis_and_Design)
-
 
 		* [algo17-18](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Algorithm_Analysis_and_Design/algo17-18)
 
@@ -32,9 +29,7 @@ Repository Structure
 
 
 
-
 	* [Bangladesh_Studies](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Bangladesh_Studies)
-
 
 
 
@@ -42,14 +37,11 @@ Repository Structure
 
 
 
-
 	* [Computer_Architecture](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Computer_Architecture)
 
 
 
-
 	* [Computer_Fundamental](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Computer_Fundamental)
-
 
 		* [2014-2015](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Computer_Fundamental/2014-2015)
 
@@ -60,9 +52,7 @@ Repository Structure
 
 
 
-
 	* [Computer_networks](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Computer_networks)
-
 
 		* [2018-2019](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Computer_networks/2018-2019)
 
@@ -73,14 +63,11 @@ Repository Structure
 
 
 
-
 	* [Cyber_Law](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Cyber_Law)
 
 
 
-
 	* [DLD](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/DLD)
-
 
 		* [2017-2018](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/DLD/2017-2018)
 
@@ -89,7 +76,6 @@ Repository Structure
 
 	* [Data-Structure](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Data-Structure)
 
-
 		* [2018-2019](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Data-Structure/2018-2019)
 
 
@@ -97,14 +83,12 @@ Repository Structure
 
 	* [Data_Science](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Data_Science)
 
-
 		* [2018-2019](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Data_Science/2018-2019)
 
 
 
 
 	* [DatabaseManagementSystem](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/DatabaseManagementSystem)
-
 
 		* [2018-2019](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/DatabaseManagementSystem/2018-2019)
 
@@ -115,9 +99,7 @@ Repository Structure
 
 
 
-
 	* [E-Commerce](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/E-Commerce)
-
 
 		* [2018-2019](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/E-Commerce/2018-2019)
 
@@ -126,14 +108,12 @@ Repository Structure
 
 	* [ECD](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/ECD)
 
-
 		* [2014-2015](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/ECD/2014-2015)
 
 
 
 
 	* [Financial-and-Managerial-Accounting](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Financial-and-Managerial-Accounting)
-
 
 		* [2018-2019](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Financial-and-Managerial-Accounting/2018-2019)
 
@@ -144,9 +124,7 @@ Repository Structure
 
 
 
-
 	* [Java_Technologies](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Java_Technologies)
-
 
 		* [2018-2019](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Java_Technologies/2018-2019)
 
@@ -157,9 +135,7 @@ Repository Structure
 
 
 
-
 	* [Numerical_Methods](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Numerical_Methods)
-
 
 		* [2018-2019](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Numerical_Methods/2018-2019)
 
@@ -170,9 +146,7 @@ Repository Structure
 
 
 
-
 	* [Operating_Systems_and_Systems_Programming](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Operating_Systems_and_Systems_Programming)
-
 
 		* [2018-2019](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Operating_Systems_and_Systems_Programming/2018-2019)
 
@@ -181,14 +155,12 @@ Repository Structure
 
 	* [Physics](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Physics)
 
-
 		* [2018-2019](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Physics/2018-2019)
 
 
 
 
 	* [Probability-and-statistics](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Probability-and-statistics)
-
 
 		* [2018-2019](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Probability-and-statistics/2018-2019)
 
@@ -199,9 +171,7 @@ Repository Structure
 
 
 
-
 	* [Software_Engineering](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Software_Engineering)
-
 
 		* [2018-2019](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Software_Engineering/2018-2019)
 
@@ -212,9 +182,7 @@ Repository Structure
 
 
 
-
 	* [Technical_Writing](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Technical_Writing)
-
 
 		* [2018-2019](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Technical_Writing/2018-2019)
 
@@ -222,7 +190,6 @@ Repository Structure
 
 
 	* [Theory_of_Computation](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Theory_of_Computation)
-
 
 		* [2018-2019](https://github.com/im-nayeem/Question-Bank/tree/main//Assets/Theory_of_Computation/2018-2019)
 
