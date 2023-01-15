@@ -24,7 +24,7 @@ jobs:
                 local folder_path=$path/$folder
                 echo -e "${indent}* [${folder}](https://github.com/$REPO_OWNER/$REPO_NAME/tree/main/${folder_path})" >> README.md
                 if [ "$last_folder" != "" ]; then
-                    echo -e "\n" >> README.md
+                    echo "" >> README.md
                 fi
                 last_folder=$folder
                 build_tree $folder_path "${indent}\t"
