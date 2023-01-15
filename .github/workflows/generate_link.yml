@@ -22,13 +22,13 @@ jobs:
             local last_folder=""
             for folder in $(echo "${folders}" | jq -r '.name'); do
                 local folder_path=$path/$folder
-                echo -n "${indent}|-- [${folder}](https://github.com/$REPO_OWNER/$REPO_NAME/tree/main/${folder_path})" >> README.md
+                echo -e "${indent}|-- [${folder}](https://github.com/$REPO_OWNER/$REPO_NAME/tree/main/${folder_path})" >> README.md
                 if [ "$last_folder" != "" ]; then
-                    echo "" >> README.md
+                    echo -e "\n" >> README.md
                 fi
                 last_folder=$folder
                 build_tree $folder_path "${indent}\t"
-                echo "" >> README.md
+                echo -e "\n" >> README.md
             done
         }
         echo -e "" >> README.md
